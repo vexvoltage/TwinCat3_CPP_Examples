@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0">
+	<DataTypes/>
+	<Project ProjectGUID="{99190C4C-8F3B-4C09-A2D3-7C868F30B1E4}" ModifiedGUID="{5017BFDD-FB4B-40A0-AD87-4BFCCD235CF2}" Target64Bit="true" TaskObjectIdsViaPrio="true">
+		<System>
+			<Tasks>
+				<Task Id="1" Priority="15" CycleTime="100000" AmsPort="350">
+					<Name>Task 1</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Cpp>
+			<Project Name="TcAsyncBufferWritingDrv" PrjFilePath="TcAsyncBufferWritingDrv\TcAsyncBufferWritingDrv.vcxproj" TmcFilePath="TcAsyncBufferWritingDrv\TcAsyncBufferWritingDrv.tmc">
+				<Instance Id="#x01010010">
+					<Name>TcAsyncBufferWritingDrv_Obj1 (CTcAsyncBufferWritingModule)</Name>
+					<TmcDesc GUID="{FC81C8DE-B8A7-4666-B53D-33E9599994AB}">
+						<Name>CTcAsyncBufferWritingModule</Name>
+						<CLSID ClassFactory="TcAsyncBufferWritingDrv">{FC81C8DE-B8A7-4666-B53D-33E9599994AB}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>SO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<ManualConfig>
+									<OTCID>#x0200010f</OTCID>
+								</ManualConfig>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter>
+								<Name>Parameter</Name>
+								<BitSize>64</BitSize>
+								<SubItem>
+									<Name>SegmentSize</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>0</BitOffs>
+									<Unit>
+										<![CDATA[Bytes]]>
+									</Unit>
+									<Default>
+										<Value>1024</Value>
+									</Default>
+								</SubItem>
+								<SubItem>
+									<Name>Timeout</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+									<Comment>
+										<![CDATA[The minimum value depends on the cycle time]]>
+									</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+									<Unit>
+										<![CDATA[Milliseconds]]>
+									</Unit>
+									<Default>
+										<Value>60000</Value>
+									</Default>
+								</SubItem>
+								<PTCID>#x00000001</PTCID>
+							</Parameter>
+						</Parameters>
+						<DataAreas>
+							<DataArea>
+								<AreaNo AreaType="InputDst">0</AreaNo>
+								<Name>Inputs</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>1</ByteSize>
+								<Symbol>
+									<Name>DisableWrite</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="OutputSrc">1</AreaNo>
+								<Name>Outputs</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>8</ByteSize>
+								<Symbol>
+									<Name>BytesWritten</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>WriteActive</Name>
+									<BitSize>8</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+									<BitOffs>32</BitOffs>
+								</Symbol>
+							</DataArea>
+						</DataAreas>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002060</PTCID>
+								<Name>CyclicCaller</Name>
+								<Type GUID="{0300001E-0000-0000-E000-000000000064}"/>
+								<Default>
+									<OTCID>#x0200010f</OTCID>
+								</Default>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Deployment>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+						</Deployment>
+						<ParameterValues>
+							<Value>
+								<Name>Parameter.SegmentSize</Name>
+								<Value>1024</Value>
+							</Value>
+							<Value>
+								<Name>Parameter.Timeout</Name>
+								<Value>60000</Value>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>CyclicCaller</Name>
+								<OTCID>#x0200010f</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Instance>
+			</Project>
+		</Cpp>
+	</Project>
+</TcSmProject>

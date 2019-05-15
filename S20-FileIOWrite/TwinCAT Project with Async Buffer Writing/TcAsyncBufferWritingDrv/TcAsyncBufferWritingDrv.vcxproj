@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|TwinCAT RT (x64)">
+      <Configuration>Debug</Configuration>
+      <Platform>TwinCAT RT (x64)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|TwinCAT UM (x64)">
+      <Configuration>Debug</Configuration>
+      <Platform>TwinCAT UM (x64)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|TwinCAT UM (x86)">
+      <Configuration>Debug</Configuration>
+      <Platform>TwinCAT UM (x86)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|TwinCAT RT (x64)">
+      <Configuration>Release</Configuration>
+      <Platform>TwinCAT RT (x64)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|TwinCAT UM (x64)">
+      <Configuration>Release</Configuration>
+      <Platform>TwinCAT UM (x64)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|TwinCAT UM (x86)">
+      <Configuration>Release</Configuration>
+      <Platform>TwinCAT UM (x86)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|TwinCAT RT (x86)">
+      <Configuration>Debug</Configuration>
+      <Platform>TwinCAT RT (x86)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|TwinCAT RT (x86)">
+      <Configuration>Release</Configuration>
+      <Platform>TwinCAT RT (x86)</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="TcAsyncBufferWritingModule.h" />
+    <ClInclude Include="TcFsmFile.h" />
+    <ClInclude Include="TcFsmFileClose.h" />
+    <ClInclude Include="TcFsmFileWriter.h" />
+    <ClInclude Include="TcFsmFileOpen.h" />
+    <ClInclude Include="TcFsmFileWrite.h" />
+    <ClInclude Include="TcPch.h" />
+    <ClInclude Include="TcAsyncBufferWritingDrvClassFactory.h" />
+    <ClInclude Include="TcAsyncBufferWritingDrvCtrl.h" />
+    <ClInclude Include="TcAsyncBufferWritingDrvDriver.h" />
+    <ClInclude Include="TcAsyncBufferWritingDrvInterfaces.h" />
+    <ClInclude Include="TcAsyncBufferWritingDrvServices.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TcAsyncBufferWritingModule.cpp" />
+    <ClCompile Include="TcFsmFileClose.cpp" />
+    <ClCompile Include="TcFsmFileWriter.cpp" />
+    <ClCompile Include="TcFsmFileOpen.cpp" />
+    <ClCompile Include="TcFsmFileWrite.cpp" />
+    <ClCompile Include="TcPch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvClassFactory.cpp" />
+    <ClCompile Include="TcAsyncBufferWritingDrvCtrl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvDriver.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvW32.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TcAsyncBufferWritingDrv.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TcAsyncBufferWritingDrvW32.def" />
+    <None Include="TcAsyncBufferWritingDrv.tmc">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="TcAsyncBufferWritingDrvW32.idl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'">true</ExcludedFromBuild>
+    </Midl>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D45B9F77-5CEA-43D2-A1C9-20154CFC0CC9}</ProjectGuid>
+    <RootNamespace>TcAsyncBufferWritingDrv</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'" Label="Configuration">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'" Label="Configuration" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'" Label="Configuration">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'" Label="Configuration" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'" Label="Configuration">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'" Label="Configuration" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'" Label="Configuration">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'" Label="Configuration" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'" Label="PropertySheets">
+    <Import Project="$(TWINCATSDK)\VsProps\TwinCAT Test Driver Signing.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'" Label="PropertySheets">
+    <Import Project="$(TWINCATSDK)\VsProps\TwinCAT Test Driver Signing.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'" Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.21006.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x86)'">
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT UM (x64)'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x86)'">
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT UM (x64)'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x86)'">
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|TwinCAT RT (x64)'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x86)'">
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|TwinCAT RT (x64)'" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,38 @@
+// TcAsyncBufferWritingDrvW32.idl : IDL source for TcAsyncBufferWritingDrvW32.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (TcAsyncBufferWritingDrvW32.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(54EDF0AC-ACDE-4456-920E-A26D15A8503A),
+
+		helpstring("ITcAsyncBufferWritingDrv Interface"),
+		pointer_default(unique)
+	]
+	interface ITcAsyncBufferWritingDrvCtrl : IUnknown
+	{
+	};
+
+[
+	uuid(BF6DEC14-AD1A-44a6-82E2-5913CDE2288D),
+	version(1.0),
+	helpstring("TcAsyncBufferWritingDrvW32 1.0 Type Library")
+]
+library TCASYNCBUFFERWRITINGDRVW32Lib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F634CCE5-F3B1-47a9-8151-D2B004A4B8F3),
+		helpstring("TcAsyncBufferWritingDrvCtrl Class")
+	]
+	coclass TcAsyncBufferWritingDrvCtrl
+	{
+		[default] interface ITcAsyncBufferWritingDrvCtrl;
+	};
+};

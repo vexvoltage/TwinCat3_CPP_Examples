@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a82647c2-9e90-4428-9621-236c3e5fbf45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{806e0547-0ba1-467b-a4c3-11ded0b322de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TwinCAT UM Files">
+      <UniqueIdentifier>{fe223b86-df0b-484d-983c-e138089a4e2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TwinCAT RT Files">
+      <UniqueIdentifier>{f3569a9f-84b1-4b83-86fd-c0c0fbe2a34b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TMC Files">
+      <UniqueIdentifier>{1b16c954-2c0d-44b5-a51e-6648d4e2fee7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcPch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcAsyncBufferWritingDrvClassFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcAsyncBufferWritingDrvInterfaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcAsyncBufferWritingDrvServices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcAsyncBufferWritingDrvCtrl.h">
+      <Filter>TwinCAT UM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcAsyncBufferWritingDrvDriver.h">
+      <Filter>TwinCAT RT Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcAsyncBufferWritingModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcFsmFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcFsmFileClose.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcFsmFileOpen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcFsmFileWrite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TcFsmFileWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TcPch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvClassFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvCtrl.cpp">
+      <Filter>TwinCAT UM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvW32.cpp">
+      <Filter>TwinCAT UM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingDrvDriver.cpp">
+      <Filter>TwinCAT RT Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcAsyncBufferWritingModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcFsmFileClose.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcFsmFileOpen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcFsmFileWrite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TcFsmFileWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TcAsyncBufferWritingDrv.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TcAsyncBufferWritingDrvW32.def">
+      <Filter>TwinCAT UM Files</Filter>
+    </None>
+    <None Include="TcAsyncBufferWritingDrv.tmc">
+      <Filter>TMC Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="TcAsyncBufferWritingDrvW32.idl">
+      <Filter>TwinCAT UM Files</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>
