@@ -1,0 +1,10 @@
+; TCTCOMOBJARCHIVEDRVW32.def : Declares the module parameters.
+
+LIBRARY      "TcTComObjArchiveDrvW32.DLL"
+
+EXPORTS
+	DllCanUnloadNow      PRIVATE
+	DllGetClassObject    PRIVATE
+	DllRegisterServer    PRIVATE
+	DllUnregisterServer	 PRIVATE
+	DllGetTcCtrl		 PRIVATE

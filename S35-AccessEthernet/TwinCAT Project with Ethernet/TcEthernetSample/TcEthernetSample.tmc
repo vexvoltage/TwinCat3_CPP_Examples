@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes >
+    <DataType>
+      <Name GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</Name>
+      <SubItem>
+        <Name>b</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>6</Elements>
+        </ArrayInfo>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name GUID="{18071995-0000-0000-0000-00000000003E}" HideSubItems="true">IPADDR</Name>
+      <BitSize>32</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+      <ArrayInfo>
+        <LBound>0</LBound>
+        <Elements>4</Elements>
+      </ArrayInfo>
+      <Format>
+        <Printf>%d.%d.%d.%d</Printf>
+        <Parameter>[3]</Parameter>
+        <Parameter>[2]</Parameter>
+        <Parameter>[1]</Parameter>
+        <Parameter>[0]</Parameter>
+      </Format>
+    </DataType>
+    <DataType>
+      <Name GUID="{266316a6-3822-47f0-912e-25cf0e8dbc2a}">EtherTypeCode</Name>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+      <EnumInfo>
+        <Text>EtherTypeIP</Text>
+        <Enum>#x0800</Enum>
+        <Comment>Internet Protocol</Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>EtherTypeARP1</Text>
+        <Enum>#x0806</Enum>
+        <Comment>Address Resolution Protocol</Comment>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name GUID="{8cda2136-d69c-41d7-8de6-747fb72d6ce2}">ArpHardwareTypeCode</Name>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+      <EnumInfo>
+        <Text>ArpHardwareTypeEthernet</Text>
+        <Enum>#x0001</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name GUID="{16d1057d-21ac-47d5-a9f5-97b5fb216256}">ArpOpCode</Name>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+      <EnumInfo>
+        <Text>ArpOpRequest</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ArpOpReply</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name GUID="{fea2a269-2a82-4a6e-8aa2-dfe33862316f}">ArpPacketType</Name>
+      <SubItem>
+        <Name>HardwareType</Name>
+        <Type GUID="{8cda2136-d69c-41d7-8de6-747fb72d6ce2}">ArpHardwareTypeCode</Type>
+      </SubItem>
+      <SubItem>
+        <Name>ProtocolType</Name>
+        <Type GUID="{266316a6-3822-47f0-912e-25cf0e8dbc2a}">EtherTypeCode</Type>
+      </SubItem>
+      <SubItem>
+        <Name>HardwareAddressLength</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+      </SubItem>
+      <SubItem>
+        <Name>ProtocolAddressLength</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+      </SubItem>
+      <SubItem>
+        <Name>Operation</Name>
+        <Type GUID="{16d1057d-21ac-47d5-a9f5-97b5fb216256}">ArpOpCode</Type>
+      </SubItem>
+      <SubItem>
+        <Name>SenderHardwareAddress</Name>
+        <Type GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</Type>
+      </SubItem>
+      <SubItem>
+        <Name>SenderProtocolAddress</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+      </SubItem>
+      <SubItem>
+        <Name>TargetHardwareAddress</Name>
+        <Type GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</Type>
+      </SubItem>
+      <SubItem>
+        <Name>TargetProtocolAddress</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name GUID="{990acfca-ed53-4a57-931b-3a3202931f05}">EthernetFrameType</Name>
+      <BitSize>112</BitSize>
+      <SubItem>
+        <Name>Destination</Name>
+        <Type GUID="{F45D8924-F151-4141-9296-7C8BB697BD07}">ETHERNET_ADDRESS</Type>
+        <BitSize>48</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>Source</Name>
+        <Type GUID="{F45D8924-F151-4141-9296-7C8BB697BD07}">ETHERNET_ADDRESS</Type>
+        <BitSize>48</BitSize>
+        <BitOffs>48</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>EtherType</Name>
+        <Type GUID="{266316a6-3822-47f0-912e-25cf0e8dbc2a}">EtherTypeCode</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>96</BitOffs>
+      </SubItem>
+    </DataType><DataType>
+      <Name GUID="{c244bd26-fad0-4c0d-8414-0fb360fef33c}">EthernetFrameArpType</Name>
+      <SubItem>
+        <Name>EthernetFrame</Name>
+        <Type GUID="{990acfca-ed53-4a57-931b-3a3202931f05}">EthernetFrameType</Type>
+      </SubItem>
+      <SubItem>
+        <Name>ArpPacket</Name>
+        <Type GUID="{fea2a269-2a82-4a6e-8aa2-dfe33862316f}">ArpPacketType</Type>
+      </SubItem>
+    </DataType><DataType>
+      <Name GUID="{e7aec79d-40c7-4eaa-9361-64d94bd628d4}">TcEthernetAdapterPriority</Name>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+      <EnumInfo>
+        <Text>TcEthernetAdapterPriorityLow</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TcEthernetAdapterPriorityHigh</Text>
+        <Enum>16</Enum>
+      </EnumInfo>
+    </DataType><DataType>
+      <Name GUID="{03010060-0000-0000-e000-000000000064}">ITcEthernetAdapter</Name>
+      <BaseType GUID="{00000001-0000-0000-e000-000000000064}">ITcUnknown</BaseType>
+      <Method>
+        <Name>RegisterProtocol</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>ipProt</Name>
+          <Type GUID="{03010035-0000-0000-e000-000000000064}">ITcIoEthProtocol</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>UnregisterProtocol</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>ipProt</Name>
+          <Type GUID="{03010035-0000-0000-e000-000000000064}">ITcIoEthProtocol</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetHwMacAddr</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>pMac</Name>
+          <Type GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}" PointerTo="1">ETHERNET_ADDRESS</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>AddMulticastAddr</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>mac</Name>
+          <Type GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetLinkError</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>pbLinkError</Name>
+          <Type GUID="{9060ae9d-214d-4685-a4c0-cd1082626764}" PointerTo="1">BOOL32</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>GetLinkSpeed</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>pSpeed</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>CheckRecvFrames</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>ipProt</Name>
+          <Type GUID="{03010035-0000-0000-e000-000000000064}">ITcIoEthProtocol</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>SendFrame</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>nPrio</Name>
+          <Type GUID="{e7aec79d-40c7-4eaa-9361-64d94bd628d4}">TcEthernetAdapterPriority</Type>
+        </Parameter>
+        <Parameter>
+          <Name>pFrame</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+        </Parameter>
+        <Parameter>
+          <Name>nFrame</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>ProcessSendFrames</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>ipTask</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+        </Parameter>
+        <Parameter>
+          <Name>context</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        </Parameter>
+      </Method>
+    </DataType><DataType>
+      <Name GUID="{03010035-0000-0000-e000-000000000064}">ITcIoEthProtocol</Name>
+      <BaseType GUID="{00000001-0000-0000-e000-000000000064}">ITcUnknown</BaseType>
+      <Method>
+        <Name>CheckFrame</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>pData</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+        </Parameter>
+        <Parameter>
+          <Name>nData</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        </Parameter>
+        <Parameter>
+          <Name>nVLanTag</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        </Parameter>
+        <Parameter>
+          <Name>nTimeStamp</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>LinkStatusChanged</Name>
+        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+        <Parameter>
+          <Name>bLinkError</Name>
+          <Type GUID="{9060ae9d-214d-4685-a4c0-cd1082626764}">BOOL32</Type>
+        </Parameter>
+      </Method>
+    </DataType>
+  </DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{d9a7518b-807c-4b10-adbf-b433fe2d8c2a}" Group="C++">
+      <Name>CModuleARP</Name>
+      <CLSID ClassFactory="TcEthernetSample">{d9a7518b-807c-4b10-adbf-b433fe2d8c2a}</CLSID>
+      <InitSequence>SO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface><Interface ><Type GUID="{03010035-0000-0000-e000-000000000064}" >ITcIoEthProtocol</Type></Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter CreateSymbol="true" HideParameter="true"><Name>TraceLevelMax</Name><BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType><PTCID>#x03002103</PTCID><ContextId>1</ContextId></Parameter><Parameter CreateSymbol="true" OnlineParameter="true" ReadOnly="true"><Name>SenderHardwareAddress</Name><BaseType GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</BaseType><PTCID>#x00000005</PTCID><ContextId>1</ContextId></Parameter><Parameter OnlineParameter="true" ReadOnly="true" CreateSymbol="true"><Name>TargetHardwareAddress</Name><BaseType GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</BaseType><PTCID>#x00000009</PTCID><ContextId>1</ContextId></Parameter><Parameter CreateSymbol="true"><Name>SenderIpAddress</Name><BaseType GUID="{18071995-0000-0000-0000-00000000003e}">IPADDR</BaseType><PTCID>#x00000006</PTCID><ContextId>1</ContextId></Parameter><Parameter CreateSymbol="true"><Name>TargetIpAddress</Name><BaseType GUID="{18071995-0000-0000-0000-00000000003e}">IPADDR</BaseType><PTCID>#x00000008</PTCID><ContextId>1</ContextId></Parameter><Parameter CreateSymbol="true"><Name>ArpRequestTimeoutMs</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType><Unit>ms</Unit><PTCID>#x0000000A</PTCID><ContextId>1</ContextId></Parameter><Parameter CreateSymbol="true"><Name>MultiCastHardwareAddress</Name><BaseType GUID="{f45d8924-f151-4141-9296-7c8bb697bd07}">ETHERNET_ADDRESS</BaseType><PTCID>#x0000000B</PTCID><ContextId>1</ContextId></Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Status</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name><BitSize>128</BitSize><SubItem><Name>SubItem1</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize><BitOffs>0</BitOffs></SubItem><SubItem><Name>SubItem2</Name><Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type><BitSize>16</BitSize><BitOffs>16</BitOffs></SubItem><SubItem><Name>SubItem3</Name><Type GUID="{18071995-0000-0000-0000-00000000000c}">LINT</Type><BitSize>64</BitSize><BitOffs>64</BitOffs></SubItem>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>LinkError</Name>
+            <BaseType GUID="{9060AE9D-214D-4685-A4C0-CD1082626764}">BOOL32</BaseType>
+          </Symbol>
+          <Symbol><Name>Speed</Name><BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType><Unit>MBit</Unit></Symbol>
+        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>Packets</Name><ContextId>1</ContextId><Symbol><Name>ArpRequest</Name><BaseType GUID="{c244bd26-fad0-4c0d-8414-0fb360fef33c}">EthernetFrameArpType</BaseType></Symbol></DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001E-0000-0000-E000-000000000064}" />
+        </InterfacePointer>
+        <InterfacePointer>
+          <PTCID>#x00000003</PTCID>
+          <Name>EthernetAdapter</Name>
+          <Type GUID="{03010060-0000-0000-e000-000000000064}" >ITcEthernetAdapter</Type>
+        </InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+        </FileEntry>
+      </Deployment>
+    </Module>
+  </Modules>
+</TcModuleClass>
