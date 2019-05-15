@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4018.13">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{A4C8CAA0-5C8F-4B63-8C06-A0237315DF79}">ESampleType</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text>
+					<![CDATA[SampleType_NullPtr]]>
+				</Text>
+				<Enum>0</Enum>
+				<Comment>
+					<![CDATA[Null Ptr violation]]>
+				</Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[SampleType_NullPtrFilter]]>
+				</Text>
+				<Enum>1</Enum>
+				<Comment>
+					<![CDATA[Null Ptr violation with own filter]]>
+				</Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[SampleType_Finally]]>
+				</Text>
+				<Enum>2</Enum>
+				<Comment>
+					<![CDATA[Finally statement i.e. for cleanup]]>
+				</Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[SampleType_CustomException]]>
+				</Text>
+				<Enum>3</Enum>
+				<Comment>
+					<![CDATA[Customer defined exception incl handling]]>
+				</Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[SampleType_ContinueException]]>
+				</Text>
+				<Enum>4</Enum>
+				<Comment>
+					<![CDATA[Exception with handling and continuing handling]]>
+				</Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text>
+					<![CDATA[SampleType_None]]>
+				</Text>
+				<Enum>5</Enum>
+				<Comment>
+					<![CDATA[do nothing]]>
+				</Comment>
+			</EnumInfo>
+			<Hides>
+				<Hide GUID="{71CDE739-2E6E-4829-A4B8-5643BD4FC92D}"/>
+				<Hide GUID="{5128F6A7-2C36-48C8-921F-7B7BFEEF09A5}"/>
+			</Hides>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{9E1BF074-82B0-4E91-9E1D-671F369FAF71}" Target64Bit="true">
+		<System>
+			<Settings>
+				<Debugger Priority="61"/>
+			</Settings>
+			<Tasks>
+				<Task Id="1" Priority="1" CycleTime="100000" AmsPort="350">
+					<Name>Task 1</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Cpp>
+			<Project GUID="{58E67C02-BD5D-4CBC-BDCE-FD0A6E43EDB4}" Name="SEHSample" PrjFilePath="SEHSample\SEHSample.vcxproj" TmcFilePath="SEHSample\SEHSample.tmc">
+				<Instance Id="#x01010040">
+					<Name>SEHSample</Name>
+					<TmcDesc GUID="{24F48ECB-4871-44D7-8DD7-9B15EED83407}">
+						<Name>CSEHModule</Name>
+						<CLSID ClassFactory="SEHSample">{24F48ECB-4871-44D7-8DD7-9B15EED83407}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>SO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<ManualConfig>
+									<OTCID>#x02010010</OTCID>
+								</ManualConfig>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter HideParameter="true">
+								<Name>TraceLevelMax</Name>
+								<Comment>
+									<![CDATA[Controls the amount of log messages.]]>
+								</Comment>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+								<PTCID>#x03002103</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter>
+								<Name>SampleType</Name>
+								<BitSize>16</BitSize>
+								<BaseType GUID="{A4C8CAA0-5C8F-4B63-8C06-A0237315DF79}">ESampleType</BaseType>
+								<PTCID>#x00000001</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+						</Parameters>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002060</PTCID>
+								<Name>CyclicCaller</Name>
+								<Type GUID="{0300001E-0000-0000-E000-000000000064}">ITcCyclicCaller</Type>
+								<Default>
+									<OTCID>#x02010010</OTCID>
+								</Default>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Deployment>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+						</Deployment>
+						<ParameterValues>
+							<Value>
+								<Name>TraceLevelMax</Name>
+								<EnumText>tlInfo</EnumText>
+							</Value>
+							<Value>
+								<Name>SampleType</Name>
+								<EnumText>SampleType_NullPtr</EnumText>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>CyclicCaller</Name>
+								<OTCID>#x02010010</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Instance>
+			</Project>
+		</Cpp>
+	</Project>
+</TcSmProject>

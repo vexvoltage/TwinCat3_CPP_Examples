@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0">
+	<DataTypes/>
+	<Project ProjectGUID="{E08FAE41-88F3-46AD-B430-C850614005F0}" ModifiedGUID="{8778296C-0935-48B1-B7C6-9D7993F8F298}" Target64Bit="true">
+		<System>
+			<Settings>
+				<Debugger Priority="61"/>
+			</Settings>
+			<Tasks>
+				<Task Id="2" Priority="1" CycleTime="100000" AmsPort="350">
+					<Name>Task 2</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Cpp>
+			<Project Name="TcPciIoDrv" PrjFilePath="TcPciIoDrv\TcPciIoDrv.vcxproj" TmcFilePath="TcPciIoDrv\TcPciIoDrv.tmc">
+				<Instance Id="#x01010010">
+					<Name>TcPciIoDrv_Obj1 (CModuleDPRAM)</Name>
+					<TmcDesc GUID="{304C8854-7AA5-4C0B-92AA-87A242F43173}">
+						<Name>CModuleDPRAM</Name>
+						<CLSID ClassFactory="TcPciIoDrv">{304C8854-7AA5-4C0B-92AA-87A242F43173}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>SO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<ManualConfig>
+									<OTCID>#x02010020</OTCID>
+								</ManualConfig>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter HideParameter="true">
+								<Name>TraceLevelMax</Name>
+								<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+								<PTCID>#x03002103</PTCID>
+							</Parameter>
+							<Parameter ShowSubItems="true">
+								<Name>Parameter</Name>
+								<BitSize>64</BitSize>
+								<SubItem>
+									<Name>ByteOffsetInput</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>0</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>ByteOffsetOutput</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+								</SubItem>
+								<PTCID>#x00000001</PTCID>
+							</Parameter>
+						</Parameters>
+						<DataAreas>
+							<DataArea>
+								<AreaNo AreaType="InputDst">0</AreaNo>
+								<Name>Inputs</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>4</ByteSize>
+								<Symbol>
+									<Name>Value</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="OutputSrc">1</AreaNo>
+								<Name>Outputs</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>4</ByteSize>
+								<Symbol>
+									<Name>Value</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+							</DataArea>
+						</DataAreas>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002060</PTCID>
+								<Name>CyclicCaller</Name>
+								<Type GUID="{0300001E-0000-0000-E000-000000000064}"/>
+								<Default>
+									<OTCID>#x02010020</OTCID>
+								</Default>
+							</InterfacePointer>
+							<InterfacePointer>
+								<PTCID>#x03002030</PTCID>
+								<Name>PciDeviceAdi</Name>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+								<ContextId>1</ContextId>
+								<Default>
+									<OTCID>#x03010010</OTCID>
+								</Default>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Deployment>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+						</Deployment>
+						<ParameterValues>
+							<Value>
+								<Name>TraceLevelMax</Name>
+								<EnumText>tlAlways</EnumText>
+							</Value>
+							<Value>
+								<Name>Parameter.ByteOffsetInput</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>Parameter.ByteOffsetOutput</Name>
+								<Value>0</Value>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>CyclicCaller</Name>
+								<OTCID>#x02010020</OTCID>
+							</Value>
+							<Value>
+								<Name>PciDeviceAdi</Name>
+								<OTCID>#x03010010</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Instance>
+			</Project>
+		</Cpp>
+		<Io>
+			<Device DevType="121" Id="1">
+				<Name>Device 1 (NOV-DP-RAM)</Name>
+				<AddressInfo>
+					<Pci>
+						<Address>-268435456</Address>
+						<Size>2097152</Size>
+						<BusNo>4</BusNo>
+						<SlotNo>0</SlotNo>
+						<VendorId>5612</VendorId>
+						<DeviceId>20480</DeviceId>
+					</Pci>
+				</AddressInfo>
+				<Vars VarGrpType="1" InsertType="1">
+					<Name>Inputs</Name>
+				</Vars>
+				<Vars VarGrpType="2" InsertType="1">
+					<Name>Outputs</Name>
+				</Vars>
+				<Image Id="1" AddrType="5" ImageType="2">
+					<Name>Image</Name>
+				</Image>
+				<DpRam/>
+			</Device>
+		</Io>
+	</Project>
+</TcSmProject>

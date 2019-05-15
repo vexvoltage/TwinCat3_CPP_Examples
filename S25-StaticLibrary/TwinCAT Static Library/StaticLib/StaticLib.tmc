@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+	<Vendor>
+		<Name>C++ Module Vendor</Name>
+	</Vendor>
+	<DataTypes><DataType><Name GUID="{6d2c52ff-48ff-4fac-a000-482a66f82627}">ISampleInterface</Name><BaseType GUID="{00000001-0000-0000-e000-000000000064}">ITcUnknown</BaseType><Method><Name>SampleMultiplicationMethod</Name><ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType><Parameter><Name>Parameter1</Name><Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type></Parameter><Parameter><Name>Parameter2</Name><Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type></Parameter><Parameter><Name>Parameter3</Name><Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type></Parameter></Method></DataType></DataTypes>
+	<Groups>
+		<Group SortOrder="701">
+			<Name>C++</Name>
+			<DisplayName>C++ Modules</DisplayName>
+		</Group>
+	</Groups>
+	<Modules/>
+</TcModuleClass>

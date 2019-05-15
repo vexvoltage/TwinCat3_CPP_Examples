@@ -1,0 +1,10 @@
+; DRIVERUSINGSTATICLIBW32.def : Declares the module parameters.
+
+LIBRARY      "DriverUsingStaticLibW32.DLL"
+
+EXPORTS
+	DllCanUnloadNow      PRIVATE
+	DllGetClassObject    PRIVATE
+	DllRegisterServer    PRIVATE
+	DllUnregisterServer	 PRIVATE
+	DllGetTcCtrl		 PRIVATE
