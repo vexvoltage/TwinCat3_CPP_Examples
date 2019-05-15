@@ -1,0 +1,38 @@
+// TcConcurrentDADrvW32.idl : IDL source for TcConcurrentDADrvW32.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (TcConcurrentDADrvW32.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(54EDF0AC-ACDE-4456-920E-A26D15A8503A),
+
+		helpstring("ITcConcurrentDADrv Interface"),
+		pointer_default(unique)
+	]
+	interface ITcConcurrentDADrvCtrl : IUnknown
+	{
+	};
+
+[
+	uuid(BF6DEC14-AD1A-44a6-82E2-5913CDE2288D),
+	version(1.0),
+	helpstring("TcConcurrentDADrvW32 1.0 Type Library")
+]
+library TCCONCURRENTDADRVW32Lib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(F634CCE5-F3B1-47a9-8151-D2B004A4B8F3),
+		helpstring("TcConcurrentDADrvCtrl Class")
+	]
+	coclass TcConcurrentDADrvCtrl
+	{
+		[default] interface ITcConcurrentDADrvCtrl;
+	};
+};
