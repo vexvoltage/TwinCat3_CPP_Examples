@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0">
+	<DataTypes/>
+	<Project ProjectGUID="{1C421971-EC66-4A3B-BA64-B300CEF17991}" ModifiedGUID="{FE66D915-C567-4949-A364-5F6A6EC87AFA}" Target64Bit="true">
+		<System>
+			<Settings>
+				<Debugger Priority="61"/>
+			</Settings>
+			<Tasks>
+				<Task Id="1" Priority="1" CycleTime="100000" AmsPort="301" IoAtBegin="true">
+					<Name>Task 1</Name>
+					<Vars VarGrpType="1" InsertType="1">
+						<Name>Inputs</Name>
+						<Var>
+							<Name>Var 1</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>Var 2</Name>
+							<Type>REAL</Type>
+							<BitOffs>32</BitOffs>
+							<ExternalAddress>4</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 3</Name>
+							<Type>REAL</Type>
+							<BitOffs>64</BitOffs>
+							<ExternalAddress>8</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 4</Name>
+							<Type>REAL</Type>
+							<BitOffs>96</BitOffs>
+							<ExternalAddress>12</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 5</Name>
+							<Type>REAL</Type>
+							<BitOffs>128</BitOffs>
+							<ExternalAddress>16</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 6</Name>
+							<Type>REAL</Type>
+							<BitOffs>160</BitOffs>
+							<ExternalAddress>20</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 7</Name>
+							<Type>REAL</Type>
+							<BitOffs>192</BitOffs>
+							<ExternalAddress>24</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 8</Name>
+							<Type>REAL</Type>
+							<BitOffs>224</BitOffs>
+							<ExternalAddress>28</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 9</Name>
+							<Type>REAL</Type>
+							<BitOffs>256</BitOffs>
+							<ExternalAddress>32</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 10</Name>
+							<Type>REAL</Type>
+							<BitOffs>288</BitOffs>
+							<ExternalAddress>36</ExternalAddress>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" InsertType="1">
+						<Name>Outputs</Name>
+						<Var>
+							<Name>Var 11</Name>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>Var 12</Name>
+							<Type>BYTE</Type>
+							<BitOffs>8</BitOffs>
+							<ExternalAddress>1</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 13</Name>
+							<Type>BYTE</Type>
+							<BitOffs>16</BitOffs>
+							<ExternalAddress>2</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 14</Name>
+							<Type>BYTE</Type>
+							<BitOffs>24</BitOffs>
+							<ExternalAddress>3</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 15</Name>
+							<Type>BYTE</Type>
+							<BitOffs>32</BitOffs>
+							<ExternalAddress>4</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 16</Name>
+							<Type>BYTE</Type>
+							<BitOffs>40</BitOffs>
+							<ExternalAddress>5</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 17</Name>
+							<Type>BYTE</Type>
+							<BitOffs>48</BitOffs>
+							<ExternalAddress>6</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 18</Name>
+							<Type>BYTE</Type>
+							<BitOffs>56</BitOffs>
+							<ExternalAddress>7</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 19</Name>
+							<Type>BYTE</Type>
+							<BitOffs>64</BitOffs>
+							<ExternalAddress>8</ExternalAddress>
+						</Var>
+						<Var>
+							<Name>Var 20</Name>
+							<Type>BYTE</Type>
+							<BitOffs>72</BitOffs>
+							<ExternalAddress>9</ExternalAddress>
+						</Var>
+					</Vars>
+					<Image Id="1" AddrType="1" ImageType="1" SizeIn="40" SizeOut="10">
+						<Name>Image</Name>
+					</Image>
+				</Task>
+				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Cpp>
+			<Project Name="TcIoTaskImageAccessDrv" PrjFilePath="TcIoTaskImageAccessDrv\TcIoTaskImageAccessDrv.vcxproj" TmcFilePath="TcIoTaskImageAccessDrv\TcIoTaskImageAccessDrv.tmc">
+				<Instance Id="#x01010020">
+					<Name>TcIoTaskImageAccessDrv_Obj1 (CIoTaskImageAccessModule)</Name>
+					<TmcDesc GUID="{545521DF-888C-4D86-A10D-2F1CEF24046A}">
+						<Name>CIoTaskImageAccessModule</Name>
+						<CLSID ClassFactory="TcIoTaskImageAccessDrv">{545521DF-888C-4D86-A10D-2F1CEF24046A}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>SO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<ManualConfig>
+									<OTCID>#x02010010</OTCID>
+								</ManualConfig>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter HideParameter="true">
+								<Name>TraceLevelMax</Name>
+								<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+								<PTCID>#x03002103</PTCID>
+							</Parameter>
+						</Parameters>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002060</PTCID>
+								<Name>CyclicCaller</Name>
+								<Type GUID="{0300001E-0000-0000-E000-000000000064}"/>
+								<Default>
+									<OTCID>#x02010010</OTCID>
+								</Default>
+							</InterfacePointer>
+							<InterfacePointer>
+								<PTCID>#x00000001</PTCID>
+								<Name>IoTaskImage</Name>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+								<ContextId>1</ContextId>
+								<Default>
+									<OTCID>#x03040010</OTCID>
+								</Default>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Deployment>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+						</Deployment>
+						<ParameterValues>
+							<Value>
+								<Name>TraceLevelMax</Name>
+								<EnumText>tlVerbose</EnumText>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>CyclicCaller</Name>
+								<OTCID>#x02010010</OTCID>
+							</Value>
+							<Value>
+								<Name>IoTaskImage</Name>
+								<OTCID>#x03040010</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Instance>
+			</Project>
+		</Cpp>
+	</Project>
+</TcSmProject>
