@@ -1,0 +1,11 @@
+C:\Users\henningm.BECKHOFF\Desktop\TFS-TwinCAT Supplement\TC1300 C\Dev\Samples30\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\bin\Debug\AdsSymbolSample.exe.config
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\bin\Debug\AdsSymbolSample.exe.config
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\bin\Debug\AdsSymbolSample.exe
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\bin\Debug\AdsSymbolSample.pdb
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\Sample06.Form1.resources
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\AdsSymbolSample.Properties.Resources.resources
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\AdsSymbolSample.exe
+C:\Users\Administrator\Desktop\TC1300 C\Dev\Samples3x\S06-SymbolUploadClient\S06-TwinCAT-ADS-UI-Client\obj\Debug\AdsSymbolSample.pdb

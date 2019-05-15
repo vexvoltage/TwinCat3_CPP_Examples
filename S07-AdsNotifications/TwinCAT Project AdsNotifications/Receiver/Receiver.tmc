@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes ><DataType><Name GUID="{9390ed59-3a9a-4c35-b929-3db46a97387c}">AdsNotificationStatus</Name><BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType><EnumInfo><Text>STATUS_INIT</Text><Enum>0</Enum></EnumInfo><EnumInfo><Text>STATUS_WAITHDL</Text><Enum>1</Enum></EnumInfo><EnumInfo><Text>STATUS_ADDNOT</Text><Enum>2</Enum></EnumInfo><EnumInfo><Text>STATUS_WAITADDNOT</Text><Enum>3</Enum></EnumInfo><EnumInfo><Text>STATUS_RECEIVINGNOT</Text><Enum>4</Enum></EnumInfo><EnumInfo><Text>STATUS_ERROR_ADDDEVNOT</Text><Enum>10</Enum></EnumInfo><EnumInfo><Text>STATUS_ERROR_DEVNOT</Text><Enum>11</Enum></EnumInfo><EnumInfo><Text>STATUS_ERROR_ADSCOM</Text><Enum>12</Enum></EnumInfo><Hides><Hide GUID="{165f668f-4ee3-4711-ba91-6e08bbd2d19f}" /><Hide GUID="{c89d8a71-08b0-4b87-850e-973dafa35679}" /></Hides></DataType></DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{34ba8fcf-dff6-4135-b8c4-55779b359930}" Group="C++">
+      <Name>CModuleReceiver</Name>
+      <CLSID ClassFactory="Receiver">{34ba8fcf-dff6-4135-b8c4-55779b359930}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>SO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType GUID="{8007ae3b-86bb-40f2-b385-ef87fcc239a4}">TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Status</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Control</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+          </Symbol>
+        </DataArea><DataArea><AreaNo AreaType="Standard">3</AreaNo><Name>AdsCommuncationDataArea</Name><ContextId>1</ContextId><Symbol><Name>hUser</Name><BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType></Symbol><Symbol><Name>hNotification</Name><BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType></Symbol><Symbol><Name>Status</Name><BaseType GUID="{9390ed59-3a9a-4c35-b929-3db46a97387c}">AdsNotificationStatus</BaseType></Symbol></DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001e-0000-0000-e000-000000000064}">ITcCyclicCaller</Type>
+        </InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT UM (x64)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+          <DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+        </FileEntry>
+      </Deployment>
+    </Module>
+  </Modules>
+</TcModuleClass>

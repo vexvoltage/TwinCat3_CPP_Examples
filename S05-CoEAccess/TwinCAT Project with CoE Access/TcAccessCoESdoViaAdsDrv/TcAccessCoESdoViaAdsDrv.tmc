@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass">
+  <Vendor>
+    <Name>C++ Module Vendor</Name>
+  </Vendor>
+  <DataTypes ><DataType><Name GUID="{18071995-0000-0000-0000-000000000042}" CName="AmsAddr">AMSADDR</Name><BitSize>64</BitSize><SubItem><Name>netId</Name><Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type><BitSize>48</BitSize><BitOffs>0</BitOffs></SubItem><SubItem><Name>port</Name><Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type><BitSize>16</BitSize><BitOffs>48</BitOffs></SubItem><Format><Printf>%d.%d.%d.%d.%d.%d:%d</Printf><Parameter>.netId[0]</Parameter><Parameter>.netId[1]</Parameter><Parameter>.netId[2]</Parameter><Parameter>.netId[3]</Parameter><Parameter>.netId[4]</Parameter><Parameter>.netId[5]</Parameter><Parameter>.port</Parameter></Format></DataType><DataType><Name GUID="{18071995-0000-0000-0000-000000000041}" HideSubItems="true" CName="AmsNetId">AMSNETID</Name><BitSize>48</BitSize><BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType><ArrayInfo><LBound>0</LBound><Elements>6</Elements></ArrayInfo><Format><Printf>%d.%d.%d.%d.%d.%d</Printf><Parameter>[0]</Parameter><Parameter>[1]</Parameter><Parameter>[2]</Parameter><Parameter>[3]</Parameter><Parameter>[4]</Parameter><Parameter>[5]</Parameter></Format></DataType></DataTypes>
+  <Groups>
+    <Group SortOrder="701">
+      <Name>C++</Name>
+      <DisplayName>C++ Modules</DisplayName>
+    </Group>
+  </Groups>
+  <Modules>
+    <Module GUID="{5ac9f19c-1f8e-4312-aaa1-3529bf5599c1}" Group="C++">
+      <Name>CTcSdoAccessModul</Name>
+      <CLSID ClassFactory="TcAccessCoESdoViaAdsDrv">{5ac9f19c-1f8e-4312-aaa1-3529bf5599c1}</CLSID>
+      <Licenses>
+        <License>
+          <LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+          <Comment>TC3 C++</Comment>
+        </License>
+      </Licenses>
+      <InitSequence>SO</InitSequence>
+      <Contexts>
+        <Context>
+          <Id>1</Id>
+        </Context>
+      </Contexts>
+      <Interfaces>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+        </Interface>
+        <Interface>
+          <Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+        </Interface>
+        <Interface DisableCodeGeneration="true">
+          <Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+        </Interface>
+      </Interfaces>
+      <Parameters>
+        <Parameter HideParameter="true">
+          <Name>TraceLevelMax</Name>
+          <Comment>Controls the amount of log messages.</Comment>
+          <BaseType>TcTraceLevel</BaseType>
+          <PTCID>#x03002103</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>DefaultAdsPort</Name>
+          <Comment>ADS port number to be used by the module instance. With value 0xFFFF a port number will be created. Allowed range is 2000-9999.</Comment>
+          <BaseType>WORD</BaseType>
+          <Default>
+            <Value>-1</Value>
+          </Default>
+          <PTCID>#x00000001</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter>
+          <Name>ContextAdsPort</Name>
+          <Comment>ADS port number of the task associated with context 1</Comment>
+          <BaseType>WORD</BaseType>
+          <PTCID>#x03002090</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true" DisableCodeGeneration="true">
+          <Name>AdsPort</Name>
+          <Comment>ADS port number actually used by the module instance.</Comment>
+          <BaseType>WORD</BaseType>
+          <PTCID>#x00000002</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter>
+        <Parameter CreateSymbol="true" OnlineParameter="true">
+          <Name>Counter</Name>
+          <Comment>Incremented continuously if module instance is in started mode.</Comment>
+          <BaseType>UDINT</BaseType>
+          <PTCID>#x00000003</PTCID>
+          <ContextId>1</ContextId>
+        </Parameter><Parameter><Name>VendorId</Name><BaseType GUID="{18071995-0000-0000-0000-000000000007}">DWORD</BaseType><PTCID>#x00000004</PTCID><ContextId>1</ContextId></Parameter><Parameter><Name>BaudRate</Name><BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType><PTCID>#x00000006</PTCID><ContextId>1</ContextId></Parameter><Parameter><Name>CoEVendorIdIndex</Name><BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType><PTCID>#x00000005</PTCID><ContextId>1</ContextId></Parameter><Parameter><Name>CoEVendorIdSubIndex</Name><BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType><PTCID>#x00000007</PTCID><ContextId>1</ContextId></Parameter><Parameter><Name>CoEBaudRateIndex</Name><BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType><PTCID>#x00000008</PTCID><ContextId>1</ContextId></Parameter><Parameter><Name>CoEBaudRateSubIndex</Name><BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType><PTCID>#x00000009</PTCID><ContextId>1</ContextId></Parameter>
+      </Parameters>
+      <DataAreas>
+        <DataArea>
+          <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+          <Name>Inputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Status</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol><Symbol><Name>AmsAddress</Name><BaseType GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</BaseType></Symbol>
+        </DataArea>
+        <DataArea>
+          <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+          <Name>Outputs</Name>
+          <ContextId>1</ContextId>
+          <Symbol>
+            <Name>Value</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Control</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+          <Symbol>
+            <Name>Data</Name>
+            <BaseType>UDINT</BaseType>
+          </Symbol>
+        </DataArea>
+      </DataAreas>
+      <InterfacePointers>
+        <InterfacePointer>
+          <PTCID>#x03002060</PTCID>
+          <Name>CyclicCaller</Name>
+          <Type GUID="{0300001E-0000-0000-E000-000000000064}" />
+        </InterfacePointer>
+      </InterfacePointers>
+      <DataPointers />
+      <Deployment>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x86)">
+          <SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+          <DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+        </FileEntry>
+        <FileEntry TargetPlatform="TwinCAT RT (x64)" ><SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile><DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile></FileEntry><FileEntry TargetPlatform="TwinCAT RT (x64)" ><SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile><DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile></FileEntry>
+      </Deployment>
+    </Module>
+  </Modules>
+</TcModuleClass>

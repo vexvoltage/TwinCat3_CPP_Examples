@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000042}" TcBaseType="true" CName="AmsAddr">AMSADDR</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>netId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>port</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d:%d</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ff808080808080808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000120b0000120b00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff0000ff0000ff0000ff0000ff0000ff0000ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{CCA4C48D-F2DC-44C9-955C-43A99D4C3E15}" ModifiedGUID="{0333C3E5-8C7F-45BF-9A3F-39ED4E546AB1}" Target64Bit="true">
+		<System>
+			<Settings>
+				<Debugger Priority="61"/>
+			</Settings>
+			<Tasks>
+				<Task Id="1" Priority="6" CycleTime="100000" AmsPort="350">
+					<Name>ModuleTask</Name>
+				</Task>
+				<Task Id="2" Priority="1" CycleTime="100000" AmsPort="301" HostNameOrTpyPath="HenningM-nb">
+					<Name>Task 2</Name>
+					<Vars VarGrpType="1" InsertType="1">
+						<Name>Inputs</Name>
+						<Var>
+							<Name>Var 17</Name>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" InsertType="1">
+						<Name>Outputs</Name>
+					</Vars>
+					<Image Id="4" AddrType="1" ImageType="1" SizeIn="2">
+						<Name>Image</Name>
+					</Image>
+				</Task>
+			</Tasks>
+		</System>
+		<Cpp>
+			<Project Name="TcAccessCoESdoViaAdsDrv" PrjFilePath="TcAccessCoESdoViaAdsDrv\TcAccessCoESdoViaAdsDrv.vcxproj" TmcFilePath="TcAccessCoESdoViaAdsDrv\TcAccessCoESdoViaAdsDrv.tmc">
+				<Instance Id="#x01010010">
+					<Name>TcAccessCoESdoViaAdsDrv_Obj1 (CTcSdoAccessModul)</Name>
+					<TmcDesc GUID="{5AC9F19C-1F8E-4312-AAA1-3529BF5599C1}">
+						<Name>CTcSdoAccessModul</Name>
+						<CLSID ClassFactory="TcAccessCoESdoViaAdsDrv">{5AC9F19C-1F8E-4312-AAA1-3529BF5599C1}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>SO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+								<ManualConfig>
+									<OTCID>#x02010010</OTCID>
+								</ManualConfig>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter HideParameter="true">
+								<Name>TraceLevelMax</Name>
+								<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+								<PTCID>#x03002103</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>DefaultAdsPort</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000001</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>ContextAdsPort</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x03002090</PTCID>
+							</Parameter>
+							<Parameter OnlineParameter="true" CreateSymbol="true">
+								<Name>AdsPort</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000002</PTCID>
+							</Parameter>
+							<Parameter OnlineParameter="true" CreateSymbol="true">
+								<Name>Counter</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<PTCID>#x00000003</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>VendorId</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000007}">DWORD</BaseType>
+								<PTCID>#x00000004</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>BaudRate</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+								<PTCID>#x00000006</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>CoEVendorIdIndex</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000005</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>CoEVendorIdSubIndex</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000007</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>CoEBaudRateIndex</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000008</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>CoEBaudRateSubIndex</Name>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+								<PTCID>#x00000009</PTCID>
+							</Parameter>
+						</Parameters>
+						<DataAreas>
+							<DataArea>
+								<AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
+								<Name>Inputs</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>20</ByteSize>
+								<Symbol>
+									<Name>Value</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>Status</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>32</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>Data</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>64</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>AmsAddress</Name>
+									<BitSize>64</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</BaseType>
+									<BitOffs>96</BitOffs>
+								</Symbol>
+							</DataArea>
+							<DataArea>
+								<AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
+								<Name>Outputs</Name>
+								<ContextId>1</ContextId>
+								<ByteSize>12</ByteSize>
+								<Symbol>
+									<Name>Value</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>0</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>Control</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>32</BitOffs>
+								</Symbol>
+								<Symbol>
+									<Name>Data</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+									<BitOffs>64</BitOffs>
+								</Symbol>
+							</DataArea>
+						</DataAreas>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002060</PTCID>
+								<Name>CyclicCaller</Name>
+								<Type GUID="{0300001E-0000-0000-E000-000000000064}"/>
+								<Default>
+									<OTCID>#x02010010</OTCID>
+								</Default>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Deployment>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x86)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x86)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x86)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.sys</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.sys</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT RT (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT RT (x64)\%CLASSFACTORYNAME%.pdb</SourceFile>
+								<DestinationFile>%TC_DRIVERAUTOINSTALLPATH%%CLASSFACTORYNAME%.pdb</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.dll</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.dll</DestinationFile>
+							</FileEntry>
+							<FileEntry TargetPlatform="TwinCAT UM (x64)">
+								<SourceFile>%SOLUTIONDEPLOYMENTPATH%TwinCAT UM (x64)\%CLASSFACTORYNAME%W32.pdb</SourceFile>
+								<DestinationFile>%TC_SYSSRVEXEPATH%%CLASSFACTORYNAME%W32.pdb</DestinationFile>
+							</FileEntry>
+						</Deployment>
+						<ParameterValues>
+							<Value>
+								<Name>TraceLevelMax</Name>
+								<EnumText>tlAlways</EnumText>
+							</Value>
+							<Value>
+								<Name>DefaultAdsPort</Name>
+								<Value>65535</Value>
+							</Value>
+							<Value>
+								<Name>ContextAdsPort</Name>
+								<Value>350</Value>
+							</Value>
+							<Value>
+								<Name>AdsPort</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>Counter</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>VendorId</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>BaudRate</Name>
+								<Value>5</Value>
+							</Value>
+							<Value>
+								<Name>CoEVendorIdIndex</Name>
+								<Value>4120</Value>
+							</Value>
+							<Value>
+								<Name>CoEVendorIdSubIndex</Name>
+								<Value>1</Value>
+							</Value>
+							<Value>
+								<Name>CoEBaudRateIndex</Name>
+								<Value>16499</Value>
+							</Value>
+							<Value>
+								<Name>CoEBaudRateSubIndex</Name>
+								<Value>0</Value>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>CyclicCaller</Name>
+								<OTCID>#x02010010</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Instance>
+			</Project>
+		</Cpp>
+		<Io>
+			<Device DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="172.17.212.77.2.1" RemoteName="Device 1 (EtherCAT)" Id="1">
+				<Name>Device 1 (EtherCAT)</Name>
+				<AddressInfo>
+					<Ccat>
+						<Address>-268435456</Address>
+						<Offset>131072</Offset>
+						<Size>8192</Size>
+						<BaseAddr>0</BaseAddr>
+						<BusNo>4</BusNo>
+						<SlotNo>0</SlotNo>
+						<VendorId>5612</VendorId>
+						<DeviceId>20480</DeviceId>
+						<Dma>
+							<Address>0</Address>
+							<Offset>4096</Offset>
+							<Size>256</Size>
+							<BaseAddr>2</BaseAddr>
+							<RxChn>0</RxChn>
+							<TxChn>1</TxChn>
+						</Dma>
+					</Ccat>
+				</AddressInfo>
+				<Image Id="1" AddrType="9" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box BoxType="9099" Id="1">
+					<Name>Term 1 (EK1200)</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT PdiType="#x0100" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04b02c52" RevisionNo="#x00001388" InfoDataState="false" PortPhys="49" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1200-5000 EtherCAT Power supply (2A E-Bus)" Desc="EK1200" PortABoxInfo="#x00ffffff"/>
+					<Box BoxType="9099" Id="2">
+						<Name>Term 2 (EL1004)</Name>
+						<ImageId>7</ImageId>
+						<EtherCAT SlaveType="1" AdsServerAddress="000000000000e903" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x03ec3052" RevisionNo="#x00120000" RepeatSupport="true" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1004 4Ch. Dig. Input 24V, 3ms" Desc="EL1004" PortABoxInfo="#x01000001">
+							<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
+							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6000" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6010" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6020" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
+								<Entry Name="Input" Index="#x6030" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+						</EtherCAT>
+					</Box>
+					<Box BoxType="9099" Id="3">
+						<Name>Term 3 (EL2008)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT EtherCatAddr="1002" SlaveType="1" AdsServerAddress="000000000000ea03" PdiType="#x0104" EtherCatAddrFixed="true" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07d83052" RevisionNo="#x00100000" InfoDataAddr="true" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL2008 8Ch. Dig. Output 24V, 0.5A" Desc="EL2008" PortABoxInfo="#x01000002">
+							<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
+							<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7000" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7010" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 3" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7020" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 4" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7030" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 5" Index="#x1604" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7040" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 6" Index="#x1605" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7050" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 7" Index="#x1606" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7060" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="Channel 8" Index="#x1607" InOut="1" Flags="#x0011" SyncMan="0">
+								<Entry Name="Output" Index="#x7070" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+							</Pdo>
+						</EtherCAT>
+					</Box>
+					<Box BoxType="9099" Id="4">
+						<Name>Term 4 (EL9011)</Name>
+						<ImageId>1002</ImageId>
+						<EtherCAT CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23333050" InfoDataState="false" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9011 End Terminal" Desc="EL9011" PortABoxInfo="#x01000003"/>
+					</Box>
+				</Box>
+				<EtherCAT/>
+			</Device>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-0020-0304-1000-010120000403}" Id="#x03070010"/>
+		<OwnerA Name="TIID^Device 1 (EtherCAT)">
+			<OwnerB Name="TIXC^TcAccessCoESdoViaAdsDrv^TcAccessCoESdoViaAdsDrv_Obj1 (CTcSdoAccessModul)">
+				<Link VarA="Term 1 (EK1200)^Term 3 (EL2008)^InfoData^AdsAddr" VarB="Inputs^AmsAddress"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmProject>

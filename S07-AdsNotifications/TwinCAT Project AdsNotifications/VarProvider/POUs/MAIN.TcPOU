@@ -1,0 +1,13 @@
+﻿<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.0.20">
+  <POU Name="MAIN" Id="{8335cbe7-ea26-43f2-aa6f-12facb8a9ce3}">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	PlcVar AT %Q* :  DINT := 12; 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <ObjectProperties />
+  </POU>
+</TcPlcObject>
